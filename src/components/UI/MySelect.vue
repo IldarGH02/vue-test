@@ -2,6 +2,7 @@
   <select
       :value="modelValue"
       @change="changeOption"
+      class="select-filter"
   >
     <option
         disabled
@@ -40,5 +41,10 @@ export default {
 </script>
 
 <style scoped>
-
+.select-filter {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: 1px solid teal;
+}
 </style>
