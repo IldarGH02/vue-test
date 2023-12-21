@@ -51,7 +51,12 @@ import MyDialog from "@/components/UI/MyDialog.vue";
 import MyButton from "@/components/UI/MyButton.vue";
 import MySelect from "@/components/UI/MySelect.vue";
 import MyInput from "@/components/UI/MyInput.vue";
-import {mapGetters, mapState, mapActions, mapMutations} from 'vuex'
+import {
+  mapGetters,
+  mapState,
+  mapActions,
+  mapMutations
+} from 'vuex'
 export default {
   components: {
     MyInput,
@@ -67,12 +72,14 @@ export default {
       dialogVisible: false,
     }
   },
+
   methods: {
     ...mapMutations({
       setPage: "setPage",
       setSearchQuery: "setSearchQuery",
       setSelectedSort: "setSelectedSort"
     }),
+
     ...mapActions({
       loadMorePosts: "loadMorePosts",
       fetchPosts: 'fetchPosts'
@@ -82,29 +89,33 @@ export default {
       this.posts.push(post)
       this.dialogVisible = false
     },
+
     removePost(post) {
       this.posts = this.posts.filter(p => p.id !== post.id)
+
     },
+
     showDialog() {
       this.dialogVisible = true
     },
-
-
   },
+
   mounted() {
     this.fetchPosts()
   },
+
   computed: {
     ...mapState({
-      posts: state => state.posts,
-      isLoading: state => state.isLoading,
-      selectedSort: state => state.selectedSort,
-      sortOptions: state => state.sortOptions,
-      searchQuery: state => state.searchQuery,
-      page: state => state.page,
-      limit: state => state.limit,
-      totalPages: state => state.totalPages
+      posts: state => state.post.posts,
+      isLoading: state => state.post.isLoading,
+      selectedSort: state => state.post.selectedSort,
+      sortOptions: state => state.post.sortOptions,
+      searchQuery: state => state.post.searchQuery,
+      page: state => state.post.page,
+      limit: state => state.post.limit,
+      totalPages: state => state.post.totalPages
     }),
+
     ...mapGetters({
       sortedPosts: "sortedPosts",
       sortedAndSearched: "sortedAndSearched",

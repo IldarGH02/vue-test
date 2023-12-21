@@ -14,6 +14,7 @@ export const postsModule = {
         limit: 10,
         totalPages: 0
     }),
+
     getters: {
         sortedPosts(state) {
             return [...state.posts].sort((post1, post2) =>
@@ -25,6 +26,7 @@ export const postsModule = {
                 post.title.toLowerCase().includes(state.searchQuery.toLowerCase()))
         }
     },
+
     mutations: {
         setPosts(state, posts) {
             state.posts = posts
@@ -45,6 +47,7 @@ export const postsModule = {
             state.searchQuery = searchQuery
         }
     },
+
     actions: {
         async fetchPosts({state, commit}) {
             try {

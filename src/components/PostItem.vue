@@ -13,7 +13,7 @@
       </my-button>
       <my-button
           class="post__delete"
-          @click="$emit('remove',post)"
+          @click="$emit('remove', post)"
       >
         Удалить
       </my-button>

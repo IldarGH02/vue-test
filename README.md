@@ -1,19 +1,20 @@
-# vue-test
+# Пробное приложение на Vue 3, VueX
 
-## Project setup
+## Цель создания проекта
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+Попробовать Vue, Vuex. 
+Есть определенные недочеты, но не стояло задачи сделать идеальный проект, 
+а просто попробовать новые технологии.
 ```
 
-### Compiles and minifies for production
+## Установка:
 ```
-npm run build
+1) Скаиваем/клонируем репозиторий
+2) В терминале вводим команду npm i/install для установки пакетов
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Запуск:
+```
+В терминале вводим команду "npm run serve"
+```
+
